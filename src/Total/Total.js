@@ -14,7 +14,6 @@ export default class Total extends React.Component {
                 <div className="summary__total__label">Total</div>
                 <div className="summary__total__value">
                     {this.USCurrencyFormat.format(this.total)}
-                
                 </div>
                 </div>
             </div>

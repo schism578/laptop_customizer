@@ -39,9 +39,9 @@ class App extends Component {
     const selectedOption = this.state.selected[feature];
 });
 
-total = Object.keys(this.state.selected).reduce(
-  (acc, curr) => acc + this.state.selected[curr].cost,
-  0
+  total = Object.keys(this.state.selected).reduce(
+    (acc, curr) => acc + this.state.selected[curr].cost,
+    0
 );
 
   render() {
