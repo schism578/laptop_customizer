@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cart.css';
-import Total from './Total/Total';
+import Total from '../Total/Total';
 
 export default class Cart extends React.Component {
 

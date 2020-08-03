@@ -1,6 +1,6 @@
 import React from 'react';
 import './FeatureList.css';
-import Features from './Features/Features';
+import Features from '../Features/Features';
 
 export default class FeatureList extends React.Component {
     render() {

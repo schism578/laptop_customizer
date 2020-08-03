@@ -2,6 +2,10 @@ import React from 'react';
 import './Total.css';
 
 export default class Total extends React.Component {
+    USCurrencyFormat = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      });
 
     render() {
         return (
@@ -9,7 +13,7 @@ export default class Total extends React.Component {
                 <div className="summary__total">
                 <div className="summary__total__label">Total</div>
                 <div className="summary__total__value">
-                    {USCurrencyFormat.format(this.total)}
+                    {this.USCurrencyFormat.format(this.total)}
                 
                 </div>
                 </div>

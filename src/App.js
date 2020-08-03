@@ -51,8 +51,8 @@ total = Object.keys(this.state.selected).reduce(
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          {this.FeatureList}
-          {this.Cart}
+          <FeatureList />
+          <Cart />
         </main>
       </div>
     );
