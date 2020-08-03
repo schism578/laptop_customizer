@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import FeatureList from './FeatureList/FeatureList';
-import Cart from './Cart/Cart';
+import SummarySection from './SummarySection/SummarySection';
 import './App.css';
 
 
 class App extends Component {
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
     selected: {
       'Processor': {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
@@ -25,6 +27,7 @@ class App extends Component {
       }
     }
   };
+};
 
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
@@ -34,30 +37,21 @@ class App extends Component {
     });
   };
 
-  summary = Object.keys(this.state.selected).map((feature, idx) => {
-    const featureHash = feature + '-' + idx;
-    const selectedOption = this.state.selected[feature];
-});
-
-  total = Object.keys(this.state.selected).reduce(
-    (acc, curr) => acc + this.state.selected[curr].cost,
-    0
-);
-
   render() {
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
-        </header>
+        </header>      
         <main>
-          <FeatureList />
-          <Cart />
+          <FeatureList selected={this.state.selected} handleUpdate={this.updateFeature}/>
+          <SummarySection selected={this.state.selected}/>
         </main>
       </div>
     );
   }
 }
+
 
 
 export default App;
